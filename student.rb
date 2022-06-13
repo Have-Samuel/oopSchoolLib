@@ -1,12 +1,11 @@
 require "./person.rb"
 
 class Student < Person
-  def initialize(color, name = "Unknown")
-    super("student", 4, name)
-    @color = color
+  def initialize(classroom, age, name)
+    super("student", name)
   end
 
-  def bring_a_stick
-    "Here is your stick: ---------"
+  def play_hooky
+    "¯\(ツ)/¯"
   end
 end
