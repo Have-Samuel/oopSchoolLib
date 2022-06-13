@@ -1,8 +1,8 @@
-require "./animal.rb"
+require "./person.rb"
 
-class Dog < Animal
+class Student < Person
   def initialize(color, name = "Unknown")
-    super("dog", 4, name)
+    super("student", 4, name)
     @color = color
   end
 
