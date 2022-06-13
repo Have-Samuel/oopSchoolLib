@@ -7,6 +7,6 @@ class Teacher < Person
   end
 
   def can_use_services
-    return true @parent_permission
+    return true
   end
 end
