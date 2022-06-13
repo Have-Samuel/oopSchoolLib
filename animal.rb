@@ -1,4 +1,4 @@
-class Animal
+class Person
   def initialize(type, number_of_legs, name = "Unknown")
     @id = Random.rand(1..1000)
     @name = name
@@ -28,6 +28,14 @@ class Animal
 
   def name=(value)
     @name = value
+  end
+
+  def speak(animal)
+    if @type == "dog"
+      "Woof, woof"
+    elsif @type == "spider"
+      "..."
+    end
   end
 end
 
