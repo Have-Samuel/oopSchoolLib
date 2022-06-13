@@ -1,5 +1,5 @@
 class Person
-  def initialize(type, number_of_legs, name = "Unknown")
+  def initialize(name = "unknown", age, parent_permission= true)
     @id = 
     @name = name
     @age = 
