@@ -1,9 +1,8 @@
 class Person
   def initialize(type, number_of_legs, name = "Unknown")
-    @id = Random.rand(1..1000)
+    @id = 
     @name = name
-    @number_of_legs = number_of_legs
-    @type = type
+    @age = 
   end
 
   def speak
