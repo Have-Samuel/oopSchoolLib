@@ -26,5 +26,5 @@ class Person
   end
 end
 
-sam = Person.new(12)
-p sam
+# sam = Person.new(12)
+# p sam
