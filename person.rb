@@ -5,10 +5,12 @@ class Person < Nameable
   attr_accessor :name, :age
 
   def initialize(age, name = 'unknown', parent_permission: true)
-    @id = Random.rand(1..1000)
+    super()
+    @id = id
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   # Adding Getters and setters / you can make it even shorter by using: attr_accessor :name, ad, age
@@ -25,6 +27,9 @@ class Person < Nameable
   def correct_name
     name
   end
+
+  def add_rental(book, date)
+    Rentals.new(date, self, book)
 
   private
 
