@@ -116,7 +116,7 @@ class Main # rubocop:disable Metrics/ClassLength
 
     parent_permission = permission.downcase == 'y' || permission.downcase == 'yes' || permission == ''
 
-    student = Student.new(age, name, classroom, parent_permission: parent_permission)
+    Student.new(age, name, classroom, parent_permission: parent_permission)
 
     @list_people.push('student')
 
