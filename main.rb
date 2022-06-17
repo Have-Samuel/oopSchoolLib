@@ -148,7 +148,7 @@ class Main # rubocop:disable Metrics/ClassLength
 
   def add_rental
     puts 'Select a book from the following list by number (not ID): '
-    @booklist.each_with_index do |book, index|
+    @booklist.each_with_index do |_book, index|
       puts "[#{index}] [#{person.class}] Name: #{person.name} ID: #{person.id} Age: #{person.age}"
     end
     person_index = gets.chomp.to_i
