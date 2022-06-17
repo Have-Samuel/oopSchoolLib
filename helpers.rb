@@ -18,7 +18,8 @@ module Helpers
   end
 
   def invalid_prompt
-    clearputs 'Incorrect selection, please try again!'
+    clear
+    puts 'Incorrect selection, please try again!'
 
     sleep 1
   end
