@@ -1,23 +1,23 @@
-require './person'
 require './student'
 require './teacher'
 require './book'
+require './person'
 require './rental'
 
 class Main # rubocop:disable Metrics/ClassLength
-    def initialize
-      @bookList = []
-      @list_people = []
-      @rentals = []
-    end
+  def initialize
+    @bookList = []
+    @list_people = []
+    @rentals = []
+  end
 
-    def first_display
-      puts 'Welcome to School Library App!'
-      prompt_user
-    end
+  def first_display
+    puts 'Welcome to School Library App!'
+    prompt_user
+  end
 
-    def prompt_user
-      options
+  def prompt_user
+    options
     input = gets.chomp
 
     if input.to_1.between?(1, 6)
@@ -80,7 +80,7 @@ class Main # rubocop:disable Metrics/ClassLength
   end
 
   def add_user
-    puts "\nPlease select a number to choose an option"
+    puts "\nPlease select a number to choose an option: "
     puts '1 - Create a student'
     puts '2 - Create a teacher'
     puts '0 - Exit'
@@ -96,8 +96,8 @@ class Main # rubocop:disable Metrics/ClassLength
     when '0'
       exit
     else
-    invalid_prompt
-    add_user
+      invalid_prompt
+      add_user
     end
   end
 
@@ -116,7 +116,7 @@ class Main # rubocop:disable Metrics/ClassLength
 
     parent_permission = permission.downcase == 'y' || permission.downcase == 'yes' || permission == ''
 
-    student = Student.new(age, name, classroom,parent_permission: parent_permission)
+    student = Student.new(age, name, classroom, parent_permission: parent_permission)
 
     @list_people.push('student')
 
@@ -168,7 +168,8 @@ class Main # rubocop:disable Metrics/ClassLength
     puts "Rentals: #{user_id}"
     @rental.each do |rental|
       if rental.person.id == user_id
-        puts "[#{rental.person.class}] Name: #{rental.person.name} | Date: #{rental.date} | Book: \"#{rental.book.title}\" by #{rental.book.author}"
+        puts "[#{rental.person.class}] Name: #{rental.person.name}
+        | Date: #{rental.date} | Book: \"#{rental.book.title}\" by #{rental.book.author}"
       end
     end
 
@@ -192,49 +193,26 @@ class Main # rubocop:disable Metrics/ClassLength
     if anwer.downcase == 'y' || answer.downcase == 'yes' || answer == ''
       clear
       prompt_user
-      else
-        exit
-      end
-    end
-
-    def invalid_prompt
-      clear
-      puts 'Incorrect selection. please try again!'
-
-      sleep 1
-    end
-
-    def clear
-      print "\e[2J\e[f"
-    end
-
-    def exit
-      clear
+    else
+      exit
     end
   end
 
-  main = Main.new
-  main.first_display
+  def invalid_prompt
+    clear
+    puts 'Incorrect selection. please try again!'
 
-
-
-
-
-
-def interface
-  myArray = [
-    '1 - list all books', '2 - List all people',
-    '3 - Create a person', '4 - Create a book',
-    '5 - Create a rental', '6 - List all rentals for a given person id',
-    '7 - Exit'
-  ]
-  puts 'Welcome to School Library App!'
-  puts 'Please choose an option by entering a number'
-  for k in myArray
-    puts k
+    sleep 1
   end
-  puts "What is your name?"
-    name = gets.chomp
-    puts "Hello #{name}!"
+
+  def clear
+    print "\e[2J\e[f"
+  end
+
+  def exit
+    clear
+  end
 end
-interface
+
+main = Main.new
+main.first_display
