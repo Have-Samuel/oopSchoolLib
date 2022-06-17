@@ -215,5 +215,5 @@ class Main # rubocop:disable Metrics/ClassLength
   end
 end
 
-main = Main.new
-main.first_display
+# main = Main.new
+# main.first_display
