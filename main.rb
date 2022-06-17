@@ -6,7 +6,7 @@ require './rental'
 
 class Main # rubocop:disable Metrics/ClassLength
   def initialize
-    @bookList = []
+    @book_ist = []
     @list_people = []
     @rentals = []
   end
