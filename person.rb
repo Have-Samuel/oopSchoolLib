@@ -14,7 +14,6 @@ class Person < Nameable
     @rentals = []
   end
 
-  # Adding Getters and setters / you can make it even shorter by using: attr_accessor :name, ad, age
   def can_use_services?
     of_age? || @parent_permission
   end
